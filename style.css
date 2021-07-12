@@ -1,19 +1,20 @@
-/* -------  General Styles ------- */
+/* -------  General Styles (Mobile) ------- */
 
 body {
   font-family: "Lato", sans-serif;
+  display: grid;
 }
 
 h2 {
   font-size: 26px;
-  font-weight: 400;
+  font-weight: 600;
   margin: 0 10px 10px 10px;
   text-align: center;
 }
 
 h3 {
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 p {
@@ -31,12 +32,18 @@ section.alternate-background {
 }
 
 main img {
-  width: 100px;
+  width: 100%;
+  padding: 10px;
 }
 
-/* ---  Groups & Items --- */
+/* ---  Groups & Items (Mobile) --- */
 
-.group {
+.ideasgroup1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.ideasgroup2 {
   display: flex;
   flex-direction: column;
 }
@@ -50,7 +57,7 @@ main img {
   flex: 2;
 }
 
-/* -------  Navigation ------- */
+/* -------  Navigation (Mobile) ------- */
 
 header {
   background-color: #ff385c;
@@ -62,6 +69,18 @@ header {
   font-family: "Pangolin", cursive;
   font-size: 72px;
   color: #fff;
+}
+
+header nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+header nav ul {
+  display: flex;
+  padding-left: 0;
+  list-style: none;
 }
 
 header nav ul li {
@@ -79,10 +98,15 @@ header nav ul li a:hover {
   text-decoration: none;
 }
 
-/* -------  Search Form ------- */
+/* -------  Search Form (Mobile) ------- */
 form {
   border: 2px solid #ff385c;
   padding: 10px;
+}
+
+form div {
+  display: flex;
+  justify-content: space-between;
 }
 
 form label {
@@ -116,4 +140,54 @@ footer p {
   padding: 20px;
 }
 
-/* -------  Media Query ------- */
+/* -------  Media Query (Desktop) ------- */
+
+@media all and (min-width: 480px) {
+  
+  /* ---  Groups & Items (Desktop) --- */
+
+  .group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  /* -------  Navigation (Desktop) ------- */
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+  }
+
+  .logo {
+    font-size: 42px;
+    margin: 14px 0 14px 20px;
+    padding-top: 0;
+  }
+
+  header nav ul {
+    align-items: center;
+  }
+
+  /* -------  Search Form ------- */
+  form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  form div {
+    flex-direction: column;
+  }
+
+  form select,
+  form input {
+    margin-bottom: 0px;
+  }
+
+  form button {
+    flex: 1;
+  }
+
+}
